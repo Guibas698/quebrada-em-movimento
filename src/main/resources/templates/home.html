@@ -1,0 +1,113 @@
+<!-- src/main/resources/templates/home.html -->
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home - Torneios</title>
+    <link rel="stylesheet" th:href="@{/css/style_home.css}">
+</head>
+<body>
+    <header>
+        <div class="logo">LOGO</div>
+        <nav>
+            <ul>
+                <li><a href="/">Home</a></li>
+                <li><a href="/torneios">Torneios</a></li>
+                <li><a href="/galeria">Galeria</a></li>
+                <li><a href="/quem_somos">Quem Somos</a></li>
+                <li><a href="/patrocinadores">PATROCINADORES</a></li>
+                <li><a href="/acoes_futuras">Futuras Ações</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="hero">
+        <div class="frase-inicial">
+            <h1>Unindo a comunidade <br> pelo esporte e pela solidariedade.</h1>
+        </div>
+    </section>
+
+
+    <section class="torneios">
+        <h2>Torneios em Destaque</h2>
+        <div class="cards">
+            <div class="card card-travinha" data-target="modal-travinha">
+                <h3>Torneio de Travinha</h3>
+                <p>12 de outubro</p>
+            </div>
+            <div class="card card-futemesa" data-target="modal-futmesa">
+             <h3>Torneio de FutMesa</h3>
+                <p>12 de outubro</p>
+            </div>
+        </div>
+    </section>
+
+
+
+    <section class="galeria-destaque">
+        <div class="galeria-container">
+            <h2>GALERIA</h2>
+            <a href="/galeria" class="ver-mais">VER MAIS</a>
+        </div>
+        <div class="thumbnails">
+            <div class="thumb img1"></div>
+            <div class="thumb img2"></div>
+            <div class="thumb img3"></div>
+            <div class="thumb img4"></div>
+        </div>
+    </section>
+
+
+
+    <footer>
+        <p>© 2025 Torneios</p>
+    </footer>
+
+    <!-- Modal para Travinha -->
+<div class="modal" id="modal-travinha" style="display: none;">
+  <div class="modal-content">
+    <span class="close">&times;</span>
+    <h2>Torneio de Travinha</h2>
+    <p>Aqui vão as regras do torneio de Travinha.</p>
+    <a href="/inscricoes" class="btn-inscrever">Ir para inscrição</a>
+  </div>
+</div>
+
+<!-- Modal para Fute-Mesa -->
+<div class="modal" id="modal-futmesa" style="display: none;">
+  <div class="modal-content">
+    <span class="close">&times;</span>
+    <h2>Torneio de Fute-Mesa</h2>
+    <p>Aqui vão as regras do torneio de Fute-Mesa.</p>
+    <a href="/inscricoes" class="btn-inscrever">Ir para inscrição</a>
+  </div>
+</div>
+
+    <script>
+        // adiciona evento de clique para cada card
+        document.querySelectorAll('.cards .card').forEach(card => {
+            card.addEventListener('click', function() {
+            const target = this.getAttribute('data-target');
+            if (target) {
+                document.getElementById(target).style.display = 'flex';
+            }
+            });
+        });
+
+        // fecha modal
+        document.querySelectorAll('.modal .close').forEach(btn => {
+            btn.addEventListener('click', function() {
+            this.closest('.modal').style.display = 'none';
+            });
+        });
+
+        window.addEventListener('click', function(e) {
+            if (e.target.classList.contains('modal')) {
+            e.target.style.display = 'none';
+            }
+        });
+    </script>
+
+</body>
+</html>

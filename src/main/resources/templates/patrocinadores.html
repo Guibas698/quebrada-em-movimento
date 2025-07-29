@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Patrocinadores</title>
+  <link rel="stylesheet" href="/css/style_patrocinadores.css">
+</head>
+<body>
+
+  <header>
+    <div class="logo"><a href="/">LOGO</a></div>
+    <nav>
+      <ul>
+        <li><a href="/">Home</a></li>
+        <li><a href="/torneios">Torneios</a></li>
+        <li><a href="/galeria">Galeria</a></li>
+        <li><a href="/quem_somos">Quem Somos</a></li>
+        <li><a href="/patrocinadores">Patrocinadores</a></li>
+        <li><a href="/futuras-acoes">Futuras Ações</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="frase-inicial">
+        <h1>PATROCINADORES</h1>
+        <p>Confira os nossos patrocinadores<br>que tornam tudo isso possível!</p>
+      </div>
+    </section>
+
+    <section class="cards-patrocinadores">
+    <div class="card" onclick="abrirModal(this)"
+        data-nome="Marca X"
+        data-telefone="+55 (11) 91234-5678"
+        data-endereco="Rua Exemplo, 123 - Centro, SP"
+        data-descricao="Somos uma empresa parceira que acredita no esporte como ferramenta de transformação social."
+        data-imagem="https://i.pinimg.com/1200x/fc/8c/f1/fc8cf1004acb63735e3b101a51166480.jpg">
+        <img src="https://i.pinimg.com/1200x/fc/8c/f1/fc8cf1004acb63735e3b101a51166480.jpg" alt="Patrocinador 1">
+        <h2>Marca X</h2>
+        <p>Apoiador oficial do evento</p>
+    </div>
+
+        <div class="card" onclick="abrirModal(this)"
+        data-nome="Marca Y"
+        data-telefone="+55 (11) 91234-5678"
+        data-endereco="Rua Exemplo, 123 - Centro, SP"
+        data-descricao="Somos uma empresa parceira que acredita no esporte como ferramenta de transformação social."
+        data-imagem="https://i.pinimg.com/736x/4f/bf/3e/4fbf3e5de871b4a1399fe4873586958b.jpg">
+        <img src="https://i.pinimg.com/736x/4f/bf/3e/4fbf3e5de871b4a1399fe4873586958b.jpg" alt="Patrocinador 1">
+        <h2>Marca Y</h2>
+        <p>Apoiador oficial do evento</p>
+    </div>
+
+        </div>
+
+        <div class="card" onclick="abrirModal(this)"
+        data-nome="Marca Z"
+        data-telefone="+55 (11) 91234-5678"
+        data-endereco="Rua Exemplo, 123 - Centro, SP"
+        data-descricao="Somos uma empresa parceira que acredita no esporte como ferramenta de transformação social."
+        data-imagem="https://i.pinimg.com/1200x/f0/1f/48/f01f48bd944ca7dc752f6774796843a5.jpg">
+        <img src="https://i.pinimg.com/1200x/f0/1f/48/f01f48bd944ca7dc752f6774796843a5.jpg" alt="Patrocinador 1">
+        <h2>Marca Z</h2>
+        <p>Apoiador oficial do evento</p>
+    </div>
+    
+
+      
+      
+    </section>
+  </main>
+
+  <!-- Modal de detalhes do patrocinador -->
+    <div class="modal" id="modalPatrocinador">
+        <div class="modal-content">
+            <span class="close" onclick="fecharModal()">&times;</span>
+            <img id="modalImagem" src="" alt="Logo do patrocinador">
+            <h2 id="modalNome"></h2>
+            <p><strong>Telefone:</strong> <a href="#" id="modalTelefone"></a></p>
+            <p><strong>Endereço:</strong> <a href="#" id="modalEndereco"></a></p>
+            <p id="modalDescricao"></p>
+        </div>
+    </div>
+
+  <footer>
+    <p>&copy; 2025 Seu Projeto - Todos os direitos reservados</p>
+  </footer>
+
+    <script>
+    function abrirModal(card) {
+    document.getElementById('modalNome').textContent = card.dataset.nome;
+    document.getElementById('modalImagem').src = card.dataset.imagem;
+    document.getElementById('modalTelefone').textContent = card.dataset.telefone;
+    document.getElementById('modalTelefone').href = `tel:${card.dataset.telefone}`;
+    document.getElementById('modalEndereco').textContent = card.dataset.endereco;
+    document.getElementById('modalEndereco').href = `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(card.dataset.endereco)}`;
+    document.getElementById('modalDescricao').textContent = card.dataset.descricao;
+
+    document.getElementById('modalPatrocinador').style.display = 'flex';
+    }
+
+    function fecharModal() {
+    document.getElementById('modalPatrocinador').style.display = 'none';
+    }
+    </script>
+
+</body>
+</html>

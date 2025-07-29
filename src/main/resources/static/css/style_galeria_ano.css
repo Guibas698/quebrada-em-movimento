@@ -1,0 +1,123 @@
+html, body {
+  height: 100%;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  font-family: 'Bebas Neue', sans-serif;
+  background-image: url('/img/galeria/fundo-galeria.png');
+}
+  
+h1{
+    color: #fff;
+}
+
+header {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 2px;
+  background: black;
+  padding: 15px 30px;
+  z-index: 10;
+}
+
+header .logo {
+  color: yellow;
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+}
+
+nav a {
+  text-decoration: none;
+  color: white;
+  font-weight: bold;
+}
+
+@media (max-width: 768px) {
+  nav ul {
+    gap: 10px;
+    flex-wrap: wrap; /* permite quebrar linha */
+  }
+  nav a {
+    font-size: 0.9rem;
+  }
+}
+
+main.galeria-ano {
+  padding: 120px 40px 40px;
+  text-align: center;
+  flex: 1;
+}
+
+main.galeria-ano h1 {
+  font-size: 2.5rem;
+  margin-bottom: 30px;
+}
+
+.grid-imagens {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+  gap: 20px;
+  justify-items: center;
+}
+
+.foto img {
+  width: 160px;
+  height: 160px;
+  object-fit: cover;
+  border-radius: 10px;
+  border: 4px solid white;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.4);
+  transition: transform 0.3s ease;
+}
+
+.foto img:hover {
+  transform: scale(1.05);
+}
+
+footer {
+  background: black;
+  color: white;
+  text-align: center;
+  padding: 20px;
+}
+
+/* Modal para ampliar imagem */
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 999;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background-color: rgba(0, 0, 0, 0.9);
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+}
+
+.modal-conteudo {
+  max-width: 90%;
+  max-height: 90%;
+  border-radius: 12px;
+  border: 4px solid white;
+  box-shadow: 0 0 20px rgba(255, 255, 255, 0.4);
+}
+
+.fechar {
+  position: absolute;
+  top: 30px;
+  right: 40px;
+  color: white;
+  font-size: 2rem;
+  font-weight: bold;
+  cursor: pointer;
+  z-index: 1000;
+}

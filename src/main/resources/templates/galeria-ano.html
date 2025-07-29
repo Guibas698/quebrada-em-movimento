@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="pt-br" xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title th:text="'Galeria ' + ${ano}">Galeria</title>
+  <link rel="stylesheet" href="/css/style_galeria_ano.css">
+</head>
+<body>
+
+  <header>
+    <div class="logo"><a href="/">LOGO</a></div>
+    <nav>
+      <ul>
+        <li><a href="/">Home</a></li>
+        <li><a href="/torneios">Torneios</a></li>
+        <li><a href="/galeria">Galeria</a></li>
+        <li><a href="/quem_somos">Quem Somos</a></li>
+        <li><a href="/patrocinadores">PATROCINADORES</a></li>
+        <li><a href="/acoes_futuras">Futuras Ações</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main class="galeria-ano">
+    <h1 th:text="'Fotos do ano de ' + ${ano}">Fotos</h1>
+
+    <div class="grid-imagens">
+      <div th:each="img : ${imagens}" class="foto">
+        <img th:src="${img}" alt="Imagem do evento">
+      </div>
+    </div>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 Seu Projeto - Todos os direitos reservados</p>
+  </footer>
+
+    <!-- Modal de imagem ampliada -->
+    <div id="imagemModal" class="modal">
+    <span class="fechar">&times;</span>
+    <img class="modal-conteudo" id="img-ampliada">
+    </div>
+
+    <script>
+    const modal = document.getElementById("imagemModal");
+    const modalImg = document.getElementById("img-ampliada");
+    const closeBtn = document.querySelector(".fechar");
+
+    document.querySelectorAll(".foto img").forEach(img => {
+        img.addEventListener("click", () => {
+        modal.style.display = "flex";
+        modalImg.src = img.src;
+        });
+    });
+
+    closeBtn.onclick = function () {
+        modal.style.display = "none";
+    };
+
+    window.onclick = function (event) {
+        if (event.target === modal) {
+        modal.style.display = "none";
+        }
+    };
+    </script>
+
+
+</body>
+</html>

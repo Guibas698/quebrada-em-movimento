@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Inscrição no Torneio</title>
+  <link rel="stylesheet" href="/css/style_inscricoes.css">
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
+</head>
+<body>
+
+  <header>
+    <div class="logo"><a href="/">LOGO</a></div>
+    <nav>
+      <ul>
+        <li><a href="/">Home</a></li>
+        <li><a href="/torneios">Torneios</a></li>
+        <li><a href="/galeria">Galeria</a></li>
+        <li><a href="/quem_somos">Quem Somos</a></li>
+        <li><a href="/patrocinadores">Patrocinadores</a></li>
+        <li><a href="/acoes_futuras">Futuras Ações</a></li>
+        <li><a href="/inscricoes">Inscrição</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <section class="form-section">
+      <h1>Inscrição no Torneio</h1>
+      <p>Preencha as informações abaixo para participar do nosso torneio beneficente.</p>
+
+      <form action="/inscricoes" method="post">
+        <label for="nome">Nome da criança:</label>
+        <input type="text" id="nome" name="nome" required>
+
+        <label for="idade">Idade:</label>
+        <input type="number" id="idade" name="idade" min="5" max="17" required>
+
+        <label for="responsavel">Nome do responsável:</label>
+        <input type="text" id="responsavel" name="responsavel" required>
+
+        <p>Modalidade:</p>
+        <label><input type="checkbox" name="modalidade" value="futmesa"> Futmesa</label>
+        <label><input type="checkbox" name="modalidade" value="travinha"> Travinha</label>
+        <input type="text" id="comunidade" name="comunidade">
+
+        <label for="observacoes">Observações (opcional):</label>
+        <textarea id="observacoes" name="observacoes" rows="3"></textarea>
+
+        <button type="submit">Enviar Inscrição</button>
+      </form>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 Seu Projeto - Todos os direitos reservados</p>
+  </footer>
+
+</body>
+</html>

@@ -1,0 +1,93 @@
+<!-- aviso_torneio.html -->
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Futuras Ações</title>
+  <link rel="stylesheet" href="/css/style_acoes_futuras.css">
+</head>
+<body>
+
+<header>
+  <div class="logo"><a href="/">LOGO</a></div>
+  <nav>
+    <ul>
+      <li><a href="/">Home</a></li>
+      <li><a href="/torneios">Torneios</a></li>
+      <li><a href="/galeria">Galeria</a></li>
+      <li><a href="/quem_somos">Quem Somos</a></li>
+      <li><a href="/patrocinadores">Patrocinadores</a></li>
+      <li><a href="/acoes_futuras">Futuras Ações</a></li>
+    </ul>
+  </nav>
+</header>
+
+<main>
+  <section class="hero">
+    <div class="frase-inicial">
+      <h1>Futuras Ações</h1>
+      <p>Confira os nossos próximos projetos</p>
+    </div>
+  </section>
+
+  <section class="lista-torneios">
+    <div class="torneio-card verde">
+      <h3>Projeto Travinha Solidária</h3>
+      <p>12 de outubro</p>
+      <a href="#" class="btn-saiba-mais" data-target="modal-travinha">Saiba Mais</a>
+    </div>
+    <div class="torneio-card amarelo">
+      <h3>Festival de FutMesa</h3>
+      <p>Em breve</p>
+      <a href="#" class="btn-saiba-mais" data-target="modal-futmesa">Saiba Mais</a>
+    </div>
+  </section>
+</main>
+
+<!-- Modal para Travinha -->
+<div class="modal" id="modal-travinha">
+  <div class="modal-content">
+    <span class="close">&times;</span>
+    <h2>Projeto Travinha Solidária</h2>
+    <p>Estamos organizando uma grande ação social para o Dia das Crianças, com torneio de travinha, brincadeiras, distribuição de lanches e muito mais! 🎉</p>
+  </div>
+</div>
+
+<!-- Modal para FutMesa -->
+<div class="modal" id="modal-futmesa">
+  <div class="modal-content">
+    <span class="close">&times;</span>
+    <h2>Festival de FutMesa</h2>
+    <p>Evento previsto para novembro! Em breve divulgaremos todas as informações aqui no site.</p>
+  </div>
+</div>
+
+<script>
+  document.querySelectorAll('.btn-saiba-mais').forEach(btn => {
+    btn.addEventListener('click', function(e) {
+      e.preventDefault();
+      const target = this.getAttribute('data-target');
+      document.getElementById(target).style.display = 'flex';
+    });
+  });
+
+  document.querySelectorAll('.modal .close').forEach(btn => {
+    btn.addEventListener('click', function() {
+      this.closest('.modal').style.display = 'none';
+    });
+  });
+
+  window.addEventListener('click', function(e) {
+    if (e.target.classList.contains('modal')) {
+      e.target.style.display = 'none';
+    }
+  });
+</script>
+
+<footer>
+  <p>&copy; 2025 Seu Projeto - Todos os direitos reservados</p>
+</footer>
+
+</body>
+</html>

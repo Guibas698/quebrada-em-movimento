@@ -1,0 +1,229 @@
+html, body {
+  height: 100%;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  font-family: 'Bebas Neue', sans-serif;
+}
+
+main {
+  flex: 1;
+}
+
+
+
+header {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 2px;
+    background: black;
+    padding: 15px 30px;
+    z-index: 10;
+}
+
+header .logo {
+    color: yellow;
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+
+@media (max-width: 768px) {
+  nav ul {
+    gap: 10px;
+    flex-wrap: wrap; /* permite quebrar linha */
+  }
+  nav a {
+    font-size: 0.9rem;
+  }
+}
+
+
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+}
+
+nav a {
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+}
+
+.hero {
+    height: 400px; /* ou ajuste conforme necessário */
+    background: url('/img/home/fundo-hero.png') no-repeat center center;
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.hero .frase-inicial h1 {
+  font-size: 4rem;
+  font-family: 'Bebas Neue', sans-serif;
+  color: #fff;
+  text-align: center;
+  text-shadow: 2px 2px 4px rgba(0,0,0,0.6);
+}
+
+.hero .frase-inicial p {
+  font-size: 20px;
+  font-family: 'Bebas Neue', sans-serif;
+  color: #fff;
+  text-align: center;
+  text-shadow: 2px 2px 4px rgba(0,0,0,0.6);
+}
+
+@media (max-width: 768px) {
+  .hero .frase-inicial h1 {
+    font-size: 2.2rem;
+  }
+}
+
+
+
+.hero-torneios {
+  height: 300px;
+  background: url('/img/home/fundo-hero.png') no-repeat center center;
+  background-size: cover;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+.hero-torneios h1 {
+  font-size: 3rem;
+  margin: 0;
+  color: #fff;
+  text-shadow: 2px 2px 4px rgba(0,0,0,0.6);
+}
+.hero-torneios p {
+  font-size: 1.2rem;
+  color: #fff;
+}
+
+/* Grid de torneios */
+.lista-torneios {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  flex-wrap: wrap;
+  padding: 60px 20px;
+}
+
+.torneio-card {
+  font-family: 'Bebas Neue', sans-serif;
+  border-radius: 12px;
+  padding: 30px 20px;
+  width: 260px;
+  text-align: center;
+  font-size: 1.2rem;
+  font-weight: bold;
+}
+
+.torneio-card.verde {
+  background-color: #1ca14b;
+}
+.torneio-card.amarelo {
+  background-color: #f4d100;
+}
+
+.btn-saiba-mais {
+  display: inline-block;
+  margin-top: 15px;
+  background: #000;
+  color: #fff;
+  padding: 10px 20px;
+  border-radius: 30px;
+  text-decoration: none;
+  transition: background 0.3s ease, transform 0.3s ease;
+}
+.btn-saiba-mais:hover {
+  background: #222;
+  transform: translateY(-3px);
+}
+
+footer {
+  background: black;
+  color: white;
+  text-align: center;
+  padding: 20px;
+}
+
+@media (max-width: 768px) {
+  .hero-torneios h1 {
+    font-size: 2rem;
+  }
+  .lista-torneios {
+    flex-direction: column;
+    align-items: center;
+  }
+  .torneio-card {
+    width: 90%;
+  }
+}
+
+.modal {
+  display: none; /* começa escondido */
+  position: fixed;
+  z-index: 999;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background-color: rgba(0,0,0,0.7);
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+}
+
+.modal-content {
+  background: #fff;
+  color: #000;
+  border-radius: 10px;
+  padding: 30px;
+  max-width: 600px;
+  width: 100%;
+  text-align: center;
+  position: relative;
+}
+
+.modal-content h2 {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 2rem;
+  margin-bottom: 20px;
+}
+
+.modal-content p {
+  font-size: 1rem;
+  margin-bottom: 20px;
+}
+
+.btn-inscrever {
+  display: inline-block;
+  background: #f4d100;
+  color: #000;
+  padding: 12px 24px;
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 1.2rem;
+  border-radius: 30px;
+  text-decoration: none;
+  transition: background 0.3s ease;
+}
+
+.btn-inscrever:hover {
+  background: #d4b000;
+}
+
+.close {
+  position: absolute;
+  top: 15px;
+  right: 20px;
+  font-size: 1.5rem;
+  cursor: pointer;
+  font-weight: bold;
+}
