@@ -27,6 +27,57 @@ header .logo {
     font-weight: bold;
 }
 
+.logo img {
+  max-height: 55px; 
+  width: auto;    
+}
+
+.hamburger-menu {
+    display: none;
+    cursor: pointer;
+    background: transparent;
+    border: none;
+    padding: 0;
+}
+
+.hamburger-menu .bar {
+    display: block;
+    width: 25px;
+    height: 3px;
+    margin: 5px auto;
+    background-color: #fff;
+    transition: all 0.3s ease-in-out;
+}
+
+@media (max-width: 768px) {
+    .hamburger-menu {
+        display: block;
+    }
+
+    .nav-links {
+        display: none;
+        position: absolute;
+        top: 60px; /* Ajuste se o seu header for mais alto ou mais baixo */
+        left: 0;
+        width: 100%;
+        background-color: #000;
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .nav-links.active {
+        display: flex;
+    }
+
+    .nav-links li {
+        padding: 15px 0;
+    }
+
+    .nav-links li a {
+        color: #fff;
+    }
+}
+
 nav ul {
     list-style: none;
     display: flex;

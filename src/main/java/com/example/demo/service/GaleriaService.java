@@ -10,10 +10,6 @@ public class GaleriaService {
     private final Map<Integer, List<String>> bancoDeImagens = new HashMap<>();
 
     public GaleriaService() {
-        bancoDeImagens.put(2022, List.of(
-            "https://i.pinimg.com/736x/51/d9/eb/51d9eb6e516caf636f5a72bb45fe338f.jpg",
-            "https://i.pinimg.com/736x/78/b9/07/78b9077dff8a431150f55a9cb818af5a.jpg"
-        ));
         bancoDeImagens.put(2023, List.of(
             "https://i.pinimg.com/1200x/46/1a/0d/461a0d8f59725ec8fe822312215f8620.jpg",
             "https://i.pinimg.com/736x/5a/ef/25/5aef25815f12969734607f53cf617d54.jpg"

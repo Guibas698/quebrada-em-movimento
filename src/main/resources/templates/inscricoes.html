@@ -9,20 +9,29 @@
 </head>
 <body>
 
-  <header>
-    <div class="logo"><a href="/">LOGO</a></div>
-    <nav>
-      <ul>
-        <li><a href="/">Home</a></li>
-        <li><a href="/torneios">Torneios</a></li>
-        <li><a href="/galeria">Galeria</a></li>
-        <li><a href="/quem_somos">Quem Somos</a></li>
-        <li><a href="/patrocinadores">Patrocinadores</a></li>
-        <li><a href="/acoes_futuras">Futuras Ações</a></li>
-        <li><a href="/inscricoes">Inscrição</a></li>
-      </ul>
-    </nav>
-  </header>
+<header>
+        <div class="logo">
+            <a href="/"> <img src="/img/logo/logo.png" alt="Home">
+            </a>
+        </div>
+
+        <nav class="navbar">
+            <button class="hamburger-menu" id="hamburger-menu">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </button>
+
+            <ul class="nav-links" id="nav-links">
+                <li><a href="/">Home</a></li>
+                <li><a href="/torneios">Torneios</a></li>
+                <li><a href="/galeria">Galeria</a></li>
+                <li><a href="/quem_somos">Quem Somos</a></li>
+                <li><a href="/patrocinadores">PATROCINADORES</a></li>
+                <li><a href="/acoes_futuras">Futuras Ações</a></li>
+            </ul>
+        </nav>
+    </header>
 
   <main>
     <section class="form-section">
@@ -55,6 +64,14 @@
   <footer>
     <p>&copy; 2025 Seu Projeto - Todos os direitos reservados</p>
   </footer>
+  <script>
+    const hamburgerMenu = document.getElementById('hamburger-menu');
+    const navLinks = document.getElementById('nav-links');
+
+    hamburgerMenu.addEventListener('click', () => {
+        navLinks.classList.toggle('active');
+    });
+</script>
 
 </body>
 </html>

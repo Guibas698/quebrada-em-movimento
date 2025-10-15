@@ -9,9 +9,19 @@
 </head>
 <body>
     <header>
-        <div class="logo">LOGO</div>
-        <nav>
-            <ul>
+        <div class="logo">
+            <a href="/"> <img src="/img/logo/logo.png" alt="Home">
+            </a>
+        </div>
+
+        <nav class="navbar">
+            <button class="hamburger-menu" id="hamburger-menu">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </button>
+
+            <ul class="nav-links" id="nav-links">
                 <li><a href="/">Home</a></li>
                 <li><a href="/torneios">Torneios</a></li>
                 <li><a href="/galeria">Galeria</a></li>
@@ -107,6 +117,12 @@
             e.target.style.display = 'none';
             }
         });
+
+        const hamburgerMenu = document.getElementById('hamburger-menu');
+        const navLinks = document.getElementById('nav-links');
+
+        hamburgerMenu.addEventListener('click', () => {
+        navLinks.classList.toggle('active'); });
     </script>
 
 </body>
